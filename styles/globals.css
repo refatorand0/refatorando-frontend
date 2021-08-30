@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+
+@font-face {
+  font-family: "Patron";
+  src: url("/fonts/Patron/Patron - PersonalUse.otf");
+}
+
+:root {
+  --white: #f1f1f1;
+  --title-size: 32px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, 
+h2, 
+h3 {
+  font-family: "Patron", "Arial", sans-serif;
+  margin: 0px;
+}
+
+p {
+  color: var(--white);
+}

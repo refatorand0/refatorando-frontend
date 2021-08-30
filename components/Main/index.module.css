@@ -1,0 +1,56 @@
+.main {
+  background: url('/main-background.jpg');
+  background-size: cover;
+  padding-top: 66px;
+  margin-top: -66px;
+  position: relative;
+}
+
+.main:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #6768B6, #2289AB);
+  opacity: .6;
+  z-index: 1;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper .item > h1 {
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+  color: #f1f1f1;
+  font-size: var(--title-size);
+  font-weight: 800;
+  text-shadow: 2px 2px 18px rgba(0,0,0,.4);
+}
+
+.wrapper h1 span {
+  color: #B894FF;
+}
+
+.wrapper img,
+.wrapper p {
+  position: relative;
+  z-index: 2;
+}
+
+.wrapper .text > p {
+  font-family: "Open Sans", "Arial", sans-serif;
+  color: #f1f1f1;
+  margin: 26px 0px;
+  max-width: 720px;
+}
+
+.containerCta {
+  max-width: 320px;
+}

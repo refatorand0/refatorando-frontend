@@ -1,0 +1,22 @@
+.header {
+  padding: 16px;
+  position: relative;
+  z-index: 90;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu a {
+  margin: 0px 40px;
+  font-family: "Open Sans", "Arial", sans-serif;
+  color: #f1f1f1;
+  cursor: pointer;
+}
+
+.header a:hover {
+  text-decoration: underline;
+}

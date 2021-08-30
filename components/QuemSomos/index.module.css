@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+}
+
+.wrapper > .item {
+  width: 50%;
+}
+
+.wrapper > .item > h2 {
+  color: var(--white);
+  font-size: var(--title-size);
+}
+
+.wrapper > .item > p {
+  margin: 20px 0px;
+}
+
+.wrapper .item:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.containerCta {
+  max-width: 320px;
+}
