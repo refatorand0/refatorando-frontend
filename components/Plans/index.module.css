@@ -1,0 +1,12 @@
+.plans {
+  background: radial-gradient(#0A021E, #140234);
+  padding: 40px 0px;
+} 
+
+.plans h2 {
+  color: var(--white);
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 20px 0px;
+}
