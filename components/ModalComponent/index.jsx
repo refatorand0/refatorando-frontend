@@ -42,7 +42,7 @@ export default function ModalComponent() {
             <div className={styles.text}>
               <p>Insira seu e-mail ou telefone que a gente vai até você!</p>
               <Input
-                placeholder="email@exemplo.com ou (xx)xxxxx-xxxx"
+                placeholder="(xx)xxxxx-xxxx"
                 variant="flushed"
                 color="white"
                 _focus={{

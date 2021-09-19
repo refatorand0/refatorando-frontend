@@ -1,0 +1,9 @@
+.posFooter {
+  background: var(--black);
+  padding: 10px 0px;
+  border-top: 1px solid #f1f1f11f;
+}
+
+.posFooter .content p {
+  color: #f1f1f11f;
+}

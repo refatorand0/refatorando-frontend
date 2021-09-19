@@ -1,0 +1,42 @@
+.footer {
+  background: var(--black);
+  padding: 40px 20px;
+}
+
+.footer .container > img {
+  margin: 20px 0px;
+}
+
+.footer .container .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .container .wrapper .item .menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .container .wrapper .item .menu a {
+  font-family: "Open Sans", "Arial", sans-serif;
+  color: #f1f1f1;
+  cursor: pointer;
+  margin: 4px 0px;
+}
+
+.media ul {
+  list-style: none;
+}
+
+.media ul li {
+  display: flex;
+  margin: 10px 0px;
+  align-items: center;
+  color: var(--white);
+}
+
+.media .icon {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
