@@ -1,0 +1,13 @@
+.mouseArrowDown {
+  margin-top: -105px;
+  text-align: center;
+  display: block;
+  position: relative;
+  z-index: 9;
+  padding: 20px 0px;
+}
+
+.mouseArrowDown img {
+  display: block;
+  margin: 0 auto;
+}

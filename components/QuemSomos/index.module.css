@@ -9,6 +9,7 @@
 .wrapper > .item > h2 {
   color: var(--white);
   font-size: var(--title-size);
+  text-transform: uppercase;
 }
 
 .wrapper > .item > p {
@@ -23,4 +24,24 @@
 
 .containerCta {
   max-width: 320px;
+}
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .wrapper > .item {
+    width: 100%;
+  }
+
+.wrapper > .item > h2 {
+  font-size: 24px;
+}
+
+  .containerCta {
+    margin: 24px auto;
+    width: 100%;
+  }
 }

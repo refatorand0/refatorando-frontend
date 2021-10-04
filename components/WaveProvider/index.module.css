@@ -1,3 +1,10 @@
 .wavesProvider {
   background: linear-gradient(140deg, #130231 60%, #1F0D3F 80%, #070116 90%);
-} 
+}
+
+@media screen and (max-width: 767px) {
+  .wavesProvider {
+    background: linear-gradient(107.15deg, rgba(1, 0, 8, 0.05) 5.3%, rgba(46, 27, 82, 0.5) 65.8%, rgba(1, 0, 8, 0.425) 90.71%);
+    background: linear-gradient(100deg, #130231 10%, #1F0D3F 40%, #070116 90%);
+  }
+}

@@ -7,3 +7,13 @@
 .posFooter .content p {
   color: #f1f1f11f;
 }
+
+@media screen and (max-width: 767px) {
+  .posFooter {
+    padding: 10px;
+  }
+
+  .posFooter .content p {
+    font-size: 12px;
+  }
+}

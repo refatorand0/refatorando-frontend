@@ -1,5 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 
+import emailjs from 'emailjs-com';
 import {
   Modal,
   ModalOverlay,
@@ -12,26 +13,77 @@ import {
   Input,
 } from "@chakra-ui/react";
 
-import { ExternalLinkIcon } from "@chakra-ui/icons";
-
 import { useModal } from '../../context/Modal';
+import { FaWhatsapp } from 'react-icons/fa';
 
 import styles from './index.module.css';
 
-export default function ModalComponent() {
+export default function ModalComponent({ isMobile }) {
   const { isOpen, setIsOpen } = useModal();
+  const inputRef = React.useRef();
+  const [formResult, setFormResult] = React.useState({
+    loading: false,
+    message: "Nenhuma",
+    success: false,
+    warning: false
+  });
 
   const onClose = () => setIsOpen(false);
+
+  const handleSubmit = async event => {
+
+    /* Prevent for default function */
+    event.preventDefault();
+
+    /* Set loading to true */
+    setFormResult({
+      ...formResult,
+      loading: true,
+    })
+
+    /* Verify if input have at least 3 numbers and if doesn't, return warning message */
+    if (inputRef.current.value.length <= 4) {
+      setFormResult({
+        ...formResult,
+        loading: false,
+        warning: true,
+        message: "Por favor, insira alguma forma de contato válida! =)"
+      })
+      return inputRef.current.value = "";
+    }
+
+    /* Define email Saas template */
+    const templateParams = {
+      email: inputRef.current.value
+    };
+
+    /* Begin fetching the service with provided template */
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_USER);
+    emailjs.send('default_service', process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE, templateParams)
+      .then(response => {
+        console.log(response)
+        setFormResult({
+          ...formResult,
+          message: "Muito obrigado pelo interesse! Em breve nossa equipe entrará em contato. =)",
+          success: true,
+          warning: false,
+          loading: false,
+        })
+        return inputRef.current.value = "";
+      })
+      .catch(error => console.log(error))
+  }
 
   return (
     <div className={styles.modal}>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent 
+        <ModalContent
           background="#1f1f1f"
           p="20px 0px"
+          width={isMobile ? '98%' : '100%'}
         >
-          <ModalHeader color="#f1f1f1">Entre em contato:</ModalHeader>
+          <ModalHeader color="#f1f1f1">Preencha os campos abaixo e entraremos em contato:</ModalHeader>
           <ModalCloseButton
             color="#f1f1f1"
             _focus={{
@@ -40,28 +92,26 @@ export default function ModalComponent() {
           />
           <ModalBody>
             <div className={styles.text}>
-              <p>Insira seu e-mail ou telefone que a gente vai até você!</p>
               <Input
-                placeholder="(xx)xxxxx-xxxx"
+                placeholder="nome"
                 variant="flushed"
                 color="white"
                 _focus={{
                   borderColor: "#44AEB5"
                 }}
               />
-            </div>
-
-            <div className={styles.whatsappLink}>
-              <p>
-                Ou entre em contato via
-                <Button
-                  color="#44AEB5"
-                  variant="link"
-                  margin="0px 5px"
-                >
-                  whatsapp <ExternalLinkIcon margin="0px 2px" />
-                </Button>
-              </p>
+              <Input
+                placeholder="email ou telefone"
+                variant="flushed"
+                color="white"
+                ref={inputRef}
+                onChange={e =>
+                  setFormResult({ ...formResult, success: false, warning: false })
+                }
+                _focus={{
+                  borderColor: "#44AEB5"
+                }}
+              />
             </div>
 
           </ModalBody>
@@ -71,10 +121,31 @@ export default function ModalComponent() {
               colorScheme="teal"
               background="#44AEB5"
               textTransform="uppercase"
-              onClick={onClose}
+              onClick={handleSubmit}
+              isLoading={formResult.loading}
               isFullWidth
+              mr={2}
+              fontSize={isMobile ? "14px" : "16px"}
             >
               enviar
+            </Button>
+            <Button
+              ml={2}
+              variant="outline"
+              textTransform="uppercase"
+              color="#f1f1f1"
+              onClick={onClose}
+              isFullWidth
+              colorScheme="black"
+              leftIcon={<FaWhatsapp />}
+              fontSize={isMobile ? "14px" : "16px"}
+              _hover={{
+                backgroundColor: "transparent",
+                transition: "all 0.4s ease",
+                filter: "brightness(90%)"
+              }}
+            >
+              whatsapp
             </Button>
           </ModalFooter>
 

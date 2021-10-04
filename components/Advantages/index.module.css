@@ -20,3 +20,19 @@
   height: 48px;
   margin: 10px 0px;
 }
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .wrapper .item {
+    width: 100%;
+    margin: 24px 0px;
+  }
+
+  .wrapper .item img {
+    margin: 18px 0px;
+  }
+}
