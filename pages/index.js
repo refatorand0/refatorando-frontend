@@ -10,39 +10,44 @@ import Partners from '../components/Partners';
 import Plans from '../components/Plans';
 import Footer from '../components/Footer';
 import PosFooter from '../components/PosFooter';
+import MouseArrowDown from '../components/MouseArrowDown';
+import { useMediaQuery } from 'react-responsive';
 
 import ModalComponent from '../components/ModalComponent';
 
 export default function Home() {
+  const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
+
   return (
     <div>
       <Head>
         <title>Refatorando | Entre para a era digital!</title>
         <meta name="description" content="Refatorando - o seu site de tecnologia, desenvolvimento e design." />
-        <link 
-          rel="icon" 
+        <link
+          rel="icon"
           href={
             process.browser && window && window.matchMedia('(prefers-color-scheme: dark)')
               ? '/favicon.ico'
               : '/favicon-black.ico'
-          } 
+          }
         />
       </Head>
 
       <Header />
       <Main />
+      <MouseArrowDown />
 
       <WaveProvider>
         <Advantages />
         <QuemSomos />
       </WaveProvider>
-
-      <Partners />
-      <Plans />
+      
+      <Partners isMobile={isMobile}/>
+      <Plans isMobile={isMobile}/>
       <Footer />
       <PosFooter />
 
-      <ModalComponent />
+      <ModalComponent isMobile={isMobile}/>
 
     </div>
   )

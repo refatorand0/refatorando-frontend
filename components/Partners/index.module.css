@@ -1,6 +1,6 @@
 .partners {
   background: #140234;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 .partners .partnersContainer > h2 {
@@ -20,4 +20,14 @@
 
 .partners .partnersContainer .item img {
   margin: 0px auto;
+}
+
+@media screen and (max-width: 767px) {
+  .partners {
+    padding: 60px 10px;
+  }
+  
+  .partners .partnersContainer > h2 {
+    padding: 10px 0px;
+  }
 }

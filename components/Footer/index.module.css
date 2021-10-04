@@ -40,3 +40,13 @@
   display: flex;
   align-items: center;
 }
+
+@media screen and (max-width: 767px) {
+  .footer .container .wrapper {
+    flex-direction: column;
+  }
+
+  .media {
+    margin-top: 24px;
+  }
+}

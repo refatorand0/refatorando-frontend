@@ -27,7 +27,6 @@ export default function QuemSomos() {
           </div>
 
         </div>
-
       </Provider>
     </div>
   )

@@ -10,3 +10,56 @@
   text-transform: uppercase;
   margin: 20px 0px;
 }
+
+.plans .wrapper {
+  padding: 40px 0px;
+}
+
+.plans .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plans .item .half:first-child {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.plans .item .half:first-child img {
+  display: block;
+  margin-right: 80px;
+}
+
+.plans .item .half:last-child {
+  align-items: flex-start;
+  width: 50%;
+}
+
+.plans .item .half .cta {
+  padding-top: 22px;
+  width: 100%;
+  max-width: 220px;
+}
+
+@media screen and (max-width: 767px) {
+  .plans .item {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .plans .item .half:first-child,
+  .plans .item .half:last-child {
+    width: 100%;
+  }
+
+  .plans .item .half:first-child img {
+    margin: 0px auto 24px auto;
+  }
+
+  .plans .item .half .cta {
+    margin: 20px auto;
+  }
+}

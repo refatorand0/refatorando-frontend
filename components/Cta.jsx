@@ -12,7 +12,7 @@ export default function Cta({ text }) {
       colorScheme="teal"
       background="#44AEB5"
       textTransform="uppercase"
-      zIndex="2"
+      zIndex="90"
       boxShadow="6px 4px 25px rgba(0, 0, 0, 0.25);"
       onClick={handleClick}
     >

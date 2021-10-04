@@ -3,10 +3,10 @@ import Slider from 'react-slick';
 
 import styles from './index.module.css';
 
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export default function Partners() {
+export default function Partners({ isMobile }) {
   const PARTNERS_DATA = [
     {
       id: 1,
@@ -38,7 +38,7 @@ export default function Partners() {
       logo_src: "/partners/arthess.png",
       width: "240px"
     },
-    { 
+    {
       id: 6,
       title: "Nui",
       logo_src: "/partners/nui.svg",
@@ -51,7 +51,7 @@ export default function Partners() {
     dots: false,
     infinite: true,
     speed: 400,
-    slidesToShow: 3,
+    slidesToShow: isMobile ? 1 : 3,
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
@@ -71,12 +71,12 @@ export default function Partners() {
 
               <div className={styles.item} key={item.id}>
 
-                <img 
-                  src={item.logo_src} 
+                <img
+                  src={item.logo_src}
                   title={item.title}
                   style={{
                     width: item.width,
-                  }} 
+                  }}
                 />
 
               </div>
