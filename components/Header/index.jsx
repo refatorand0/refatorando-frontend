@@ -2,20 +2,19 @@ import Provider from '../Provider';
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  Button,
   useDisclosure
 } from "@chakra-ui/react";
 import { HamburgerIcon } from '@chakra-ui/icons';
+import { useModal } from '../../context/Modal';
 
 import styles from './index.module.css';
 
 export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { setIsOpen } = useModal();
 
   return (
     <div className={styles.header}>
@@ -35,6 +34,7 @@ export default function Header() {
                 color="#f1f1f1"
                 w={8}
                 h={8}
+                mt={"-8px"}
               />
             </div>
 
@@ -49,6 +49,13 @@ export default function Header() {
                   <a
                     key={index}
                     className={styles.menuItem}
+                    href={item === "contato" ? "#" : `#${item.replace(' ', '-')}`}
+                    onClick={e => {
+                      if (item === "contato") {
+                        e.preventDefault();
+                        setIsOpen(true);
+                      };
+                    }}
                   >
                     {item}
                   </a>

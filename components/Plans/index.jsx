@@ -37,7 +37,7 @@ export default function Plans({ isMobile }) {
   };
 
   return (
-    <div className={styles.plans}>
+    <div className={styles.plans} id="planos">
       <Provider>
 
         <h2>Escolha seu pacote refat</h2>
@@ -46,7 +46,7 @@ export default function Plans({ isMobile }) {
           <Slider {...settings}>
             <Plan
               image="/plans/sites.png"
-              text="Tem uma ideia bacana?  Manda pra gente!!! Aqui você encontra sites com layouts exclusivos, dinâmicos e 100% seguros, desenvolvidos com as melhores ferramentas do mercado."
+              text="Tem uma ideia bacana?  Manda pra gente! Aqui você encontra sites com layouts exclusivos, dinâmicos e 100% seguros, desenvolvidos com as melhores ferramentas do mercado."
             />
             <Plan
               image="/plans/social.png"
@@ -54,7 +54,7 @@ export default function Plans({ isMobile }) {
             />
             <Plan
               image="/plans/integrations.png"
-              text="Pensa em divulgar sua marca? Suas redes sociais são ferramentas poderosas e sabendo disso, a Refatorando não poderia deixar de desenvolver criativos de social media exclusivos e prontinhos para alavancar suas redes. Curtiu? Então clica no botão:"
+              text="Precisa de alguma integração personalizada ou precisa automatizar algum processo usando software? Você está no lugar certo!"
             />
           </Slider>
 
