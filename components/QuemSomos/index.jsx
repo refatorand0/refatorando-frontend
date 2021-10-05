@@ -5,7 +5,7 @@ import styles from './index.module.css';
 
 export default function QuemSomos() {
   return (
-    <div className={styles.quemSomos}>
+    <div className={styles.quemSomos} id="quem-somos">
       <Provider>
 
         <div className={styles.wrapper}>

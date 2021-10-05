@@ -60,7 +60,7 @@ export default function Partners({ isMobile }) {
   };
 
   return (
-    <div className={styles.partners}>
+    <div className={styles.partners} id="parceiros">
       <Provider>
 
         <div className={styles.partnersContainer}>
