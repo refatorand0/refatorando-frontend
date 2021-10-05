@@ -134,11 +134,11 @@ export default function ModalComponent({ isMobile }) {
               variant="outline"
               textTransform="uppercase"
               color="#f1f1f1"
-              onClick={onClose}
               isFullWidth
               colorScheme="black"
               leftIcon={<FaWhatsapp />}
               fontSize={isMobile ? "14px" : "16px"}
+              onClick={e => window.open('https://api.whatsapp.com/send?phone=5511986345917')}
               _hover={{
                 backgroundColor: "transparent",
                 transition: "all 0.4s ease",

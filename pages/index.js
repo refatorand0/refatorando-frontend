@@ -23,14 +23,7 @@ export default function Home() {
       <Head>
         <title>Refatorando | Entre para a era digital!</title>
         <meta name="description" content="Refatorando - o seu site de tecnologia, desenvolvimento e design." />
-        <link
-          rel="icon"
-          href={
-            process.browser && window && window.matchMedia('(prefers-color-scheme: dark)')
-              ? '/favicon.ico'
-              : '/favicon-black.ico'
-          }
-        />
+        <link rel="icon" href="/favicon.ico"/>
       </Head>
 
       <Header />
