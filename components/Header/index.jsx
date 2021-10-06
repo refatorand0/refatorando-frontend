@@ -94,12 +94,7 @@ export default function Header() {
                   <a
                     key={index}
                     className={styles.menuItem}
-                    onClick={e => {
-                      if (item === "contato") {
-                        e.preventDefault();
-                        setIsOpen(true);
-                      };
-                    }}
+                    href={item === "contato" ? "#" : `#${item.replace(' ', '-')}`}
                   >
                     {item}
                   </a>
