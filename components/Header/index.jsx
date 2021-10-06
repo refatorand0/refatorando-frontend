@@ -94,6 +94,12 @@ export default function Header() {
                   <a
                     key={index}
                     className={styles.menuItem}
+                    onClick={e => {
+                      if (item === "contato") {
+                        e.preventDefault();
+                        setIsOpen(true);
+                      };
+                    }}
                   >
                     {item}
                   </a>
