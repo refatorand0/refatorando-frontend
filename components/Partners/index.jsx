@@ -15,12 +15,6 @@ export default function Partners({ isMobile }) {
       width: "200px"
     },
     {
-      id: 2,
-      title: "Made in Brazil",
-      logo_src: "/partners/made-in-brazil.png",
-      width: "280px"
-    },
-    {
       id: 3,
       title: "Advomarketing",
       logo_src: "/partners/advomarketing.png",

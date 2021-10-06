@@ -94,6 +94,7 @@ export default function Header() {
                   <a
                     key={index}
                     className={styles.menuItem}
+                    href={item === "contato" ? "#" : `#${item.replace(' ', '-')}`}
                   >
                     {item}
                   </a>
