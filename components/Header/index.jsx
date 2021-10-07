@@ -16,6 +16,11 @@ export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { setIsOpen } = useModal();
 
+  const handleContactButtonClick = () => {
+    onClose();
+    setIsOpen(true);
+  };
+
   return (
     <div className={styles.header}>
       <Provider>
@@ -95,6 +100,7 @@ export default function Header() {
                     key={index}
                     className={styles.menuItem}
                     href={item === "contato" ? "#" : `#${item.replace(' ', '-')}`}
+                    onClick={item === "contato" ? handleContactButtonClick : onClose}
                   >
                     {item}
                   </a>
