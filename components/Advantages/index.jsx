@@ -30,7 +30,7 @@ export default function Advantages() {
   );
 
   return (
-    <div className={styles.advantages}>
+    <div className={styles.advantages} id="scroll">
       <Provider>
 
         <div className={styles.wrapper}>

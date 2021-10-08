@@ -5,7 +5,9 @@ export default function MouseArrowDown() {
   return (
     <div className={styles.mouseArrowDown}>
       <Provider>
-        <img src="mouse-arrow-down.png" />
+        <a href="#scroll">
+          <img src="mouse-arrow-down.png" />
+        </a>
       </Provider>
     </div>
   );

@@ -15,5 +15,7 @@
 
   .posFooter .content p {
     font-size: 12px;
+    color: #f1f1f1;
+    padding: 6px 0px;
   }
 }
