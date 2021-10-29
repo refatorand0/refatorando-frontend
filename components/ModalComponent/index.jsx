@@ -11,6 +11,7 @@ import {
   ModalCloseButton,
   Button,
   Input,
+  useToast,
 } from "@chakra-ui/react";
 
 import { useModal } from '../../context/Modal';
@@ -19,8 +20,10 @@ import { FaWhatsapp } from 'react-icons/fa';
 import styles from './index.module.css';
 
 export default function ModalComponent({ isMobile }) {
+  const toast = useToast();
   const { isOpen, setIsOpen } = useModal();
   const inputRef = React.useRef();
+  const inputNameRef = React.useRef();
   const [formResult, setFormResult] = React.useState({
     loading: false,
     message: "Nenhuma",
@@ -48,8 +51,10 @@ export default function ModalComponent({ isMobile }) {
         loading: false,
         warning: true,
         message: "Por favor, insira alguma forma de contato válida! =)"
-      })
-      return inputRef.current.value = "";
+      });
+
+      inputRef.current.value = "";
+      inputNameRef.current.value = "";
     }
 
     /* Define email Saas template */
@@ -61,15 +66,25 @@ export default function ModalComponent({ isMobile }) {
     emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_USER);
     emailjs.send('default_service', process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE, templateParams)
       .then(response => {
-        console.log(response)
         setFormResult({
           ...formResult,
-          message: "Muito obrigado pelo interesse! Em breve nossa equipe entrará em contato. =)",
           success: true,
           warning: false,
           loading: false,
-        })
-        return inputRef.current.value = "";
+        });
+
+        inputRef.current.value = "";
+        inputNameRef.current.value = "";
+        setIsOpen(false);
+
+        toast({
+          isClosable: true,
+          description: "Muito obrigado pelo interesse! Em breve nossa equipe entrará em contato. =)",
+          status: "success",
+          title: "Sucesso!",
+          position: "bottom",
+        });
+
       })
       .catch(error => console.log(error))
   }
@@ -96,6 +111,7 @@ export default function ModalComponent({ isMobile }) {
                 placeholder="nome"
                 variant="flushed"
                 color="white"
+                ref={inputNameRef}
                 _focus={{
                   borderColor: "#44AEB5"
                 }}
